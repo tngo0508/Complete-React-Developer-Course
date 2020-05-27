@@ -4,7 +4,8 @@ console.log("App.js is running!");
 
 var app = {
   title: "Indecision App",
-  subtitle: "world"
+  subtitle: "Put your life in the hands of a computer",
+  options: ["One", "Two"]
 };
 
 // JSX - Javascript XML
@@ -16,11 +17,12 @@ var template = React.createElement(
     null,
     app.title
   ),
-  React.createElement(
+  app.subtitle && React.createElement(
     "p",
     null,
     app.subtitle
   ),
+  app.options && app.options.length > 0 ? "here are your options" : "No options",
   React.createElement(
     "ol",
     null,
@@ -37,18 +39,23 @@ var template = React.createElement(
   )
 );
 
-// Create a templateTwo var JSX expression
-// div
-//   h1 -> Thomas Ngo
-//   p  -> Age: 27
-//   p  -> Location: Philadelphia
-// Render templateTwo instead of template
-
 var user = {
   name: "Andrew",
-  age: 26,
+  age: 17,
   location: "New York"
 };
+
+function getLocation(location) {
+  if (location) {
+    return React.createElement(
+      "p",
+      null,
+      "Location: ",
+      location
+    );
+  }
+}
+
 var userName = "Thomas";
 var userAge = 27;
 var userLocation = "California";
@@ -58,8 +65,13 @@ var templateTwo = React.createElement(
   React.createElement(
     "h1",
     null,
-    userName.toLocaleUpperCase(),
-    " Ngo"
+    user.name ? user.name : "Anonamous"
+  ),
+  user.age && user.age >= 18 && React.createElement(
+    "p",
+    null,
+    "Age: ",
+    user.age
   ),
   React.createElement(
     "p",
@@ -84,12 +96,7 @@ var templateTwo = React.createElement(
     "Age: ",
     user.age
   ),
-  React.createElement(
-    "p",
-    null,
-    "Location: ",
-    user.location
-  )
+  getLocation(user.location)
 );
 
 var appRoot = document.getElementById("app");
