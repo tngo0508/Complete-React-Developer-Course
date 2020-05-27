@@ -56,9 +56,6 @@ function getLocation(location) {
   }
 }
 
-var userName = "Thomas";
-var userAge = 27;
-var userLocation = "California";
 var templateTwo = React.createElement(
   "div",
   null,
@@ -77,30 +74,16 @@ var templateTwo = React.createElement(
     "p",
     null,
     "Age: ",
-    userAge
+    user.age
   ),
   React.createElement(
     "p",
     null,
     "Location: ",
-    userLocation
-  ),
-  React.createElement(
-    "h1",
-    null,
-    user.name
-  ),
-  React.createElement(
-    "p",
-    null,
-    "Age: ",
-    user.age
-  ),
-  getLocation(user.location)
+    user.location
+  )
 );
 
 var appRoot = document.getElementById("app");
-var app2 = document.getElementById("app2");
 
 ReactDOM.render(template, appRoot);
-ReactDOM.render(templateTwo, app2);
