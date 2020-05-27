@@ -2,6 +2,11 @@
 
 console.log("App.js is running!");
 
+var app = {
+  title: "Indecision App",
+  subtitle: "world"
+};
+
 // JSX - Javascript XML
 var template = React.createElement(
   "div",
@@ -9,12 +14,12 @@ var template = React.createElement(
   React.createElement(
     "h1",
     null,
-    "Indecision App"
+    app.title
   ),
   React.createElement(
     "p",
     null,
-    "This is some info"
+    app.subtitle
   ),
   React.createElement(
     "ol",
