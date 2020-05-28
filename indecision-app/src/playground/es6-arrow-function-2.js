@@ -1,18 +1,14 @@
-"use strict";
-
-var add = function add(a, b) {
+const add = (a, b) => {
   return a + b;
 };
 
 console.log(add(55, 1));
 
 // this keyword - no longer bound
-var user = {
+const user = {
   name: "thomas",
   cities: ["westminter", "stanton", "fullerton"],
-  printPlacesLive: function printPlacesLive() {
-    var _this = this;
-
+  printPlacesLive() {
     // console.log(this.name);
     // console.log(this.cities);
     // const that = this;
@@ -27,10 +23,8 @@ var user = {
 
     // return cityMessages;
 
-    return this.cities.map(function (city) {
-      return _this.name + " has lived in " + city;
-    });
-  }
+    return this.cities.map((city) => this.name + " has lived in " + city);
+  },
 };
 
 // user.printPlacesLive();
@@ -48,16 +42,12 @@ console.log(user.printPlacesLive());
 //   },
 // };
 
-var multiplier = {
+const multiplier = {
   numbers: [10, 20, 30],
   multiplyBy: 3,
-  multiply: function multiply() {
-    var _this2 = this;
-
-    return this.numbers.map(function (number) {
-      return number * _this2.multiplyBy;
-    });
-  }
+  multiply() {
+    return this.numbers.map((number) => number * this.multiplyBy);
+  },
 };
 
 console.log(multiplier.multiply([1, 2, 3], 2));
