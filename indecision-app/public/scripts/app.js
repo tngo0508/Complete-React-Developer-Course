@@ -1,64 +1,39 @@
 "use strict";
 
-// my solution
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-// console.log("built-it is running!");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-// let isVisible = false;
-// const setVisible = (e) => {
-//   e.preventDefault();
-//   isVisible = !isVisible;
-//   render();
-// };
+var Person = function () {
+  function Person() {
+    var name = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "Anonymous";
+    var age = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
 
-// const appRoot = document.getElementById("app");
-// const render = () => {
-//   const template = (
-//     <div>
-//       <h1>Visibility Toggle</h1>
-//       <button onClick={setVisible}>
-//         {isVisible ? "Show details" : "Hide details"}
-//       </button>
-//       <p>{isVisible ? "hello world" : ""}</p>
-//     </div>
-//   );
-//   ReactDOM.render(template, appRoot);
-// };
+    _classCallCheck(this, Person);
 
-// render();
+    this.name = name;
+    this.age = age;
+  }
 
-// Author's solution
-var visibility = false;
+  _createClass(Person, [{
+    key: "getGetting",
+    value: function getGetting() {
+      return "Hi. I am " + this.name;
+    }
+  }, {
+    key: "getDescription",
+    value: function getDescription() {
+      return this.name + " is " + this.age + " year(s) old.";
+    }
+  }]);
 
-var toggleVisibility = function toggleVisibility() {
-  visibility = !visibility;
-  render();
-};
-var render = function render() {
-  var jsx = React.createElement(
-    "div",
-    null,
-    React.createElement(
-      "h1",
-      null,
-      "Visibility Toggle"
-    ),
-    React.createElement(
-      "button",
-      { onClick: toggleVisibility },
-      visibility ? "Hide details" : "Show details"
-    ),
-    visibility && React.createElement(
-      "div",
-      null,
-      React.createElement(
-        "p",
-        null,
-        "Hey. There are some details"
-      )
-    )
-  );
-  ReactDOM.render(jsx, document.getElementById("app"));
-};
+  return Person;
+}();
 
-render();
+var me = new Person("Thomas Ngo", 27);
+console.log(me.getGetting());
+console.log(me.getDescription());
+
+var other = new Person();
+console.log(other.getGetting());
+console.log(other.getDescription());
