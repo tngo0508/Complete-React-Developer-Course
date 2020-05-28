@@ -68,7 +68,3 @@ const render = () => {
 };
 
 render();
-
-// Create render function that renders the new jsx
-// Call it right away
-// Call it after options array added to

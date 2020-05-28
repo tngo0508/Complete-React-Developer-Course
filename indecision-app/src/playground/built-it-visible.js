@@ -1,5 +1,3 @@
-"use strict";
-
 // my solution
 
 // console.log("built-it is running!");
@@ -28,35 +26,25 @@
 // render();
 
 // Author's solution
-var visibility = false;
+let visibility = false;
 
-var toggleVisibility = function toggleVisibility() {
+const toggleVisibility = () => {
   visibility = !visibility;
   render();
 };
-var render = function render() {
-  var jsx = React.createElement(
-    "div",
-    null,
-    React.createElement(
-      "h1",
-      null,
-      "Visibility Toggle"
-    ),
-    React.createElement(
-      "button",
-      { onClick: toggleVisibility },
-      visibility ? "Hide details" : "Show details"
-    ),
-    visibility && React.createElement(
-      "div",
-      null,
-      React.createElement(
-        "p",
-        null,
-        "Hey. There are some details"
-      )
-    )
+const render = () => {
+  const jsx = (
+    <div>
+      <h1>Visibility Toggle</h1>
+      <button onClick={toggleVisibility}>
+        {visibility ? "Hide details" : "Show details"}
+      </button>
+      {visibility && (
+        <div>
+          <p>Hey. There are some details</p>
+        </div>
+      )}
+    </div>
   );
   ReactDOM.render(jsx, document.getElementById("app"));
 };
