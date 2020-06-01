@@ -1,7 +1,7 @@
 import React from "react";
 
-const EditDashboardPage = (props) => (
+const EditExpensePage = (props) => (
   <div>Edidting the expense of id {props.match.params.id}</div>
 );
 
-export default EditDashboardPage;
+export default EditExpensePage;

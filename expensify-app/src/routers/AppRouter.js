@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Switch, Link, NavLink } from "react-router-dom";
 import ExpenseDashboardPage from "../components/ExpenseDashboardPage";
-import AddDashboardPage from "../components/AddDashboardPage";
-import EditDashboardPage from "../components/EditDashboardPage";
+import AddExpensePage from "../components/AddExpensePage";
+import EditExpensePage from "../components/EditExpensePage";
 import HelpPage from "../components/HelpPage";
 import NotFoundPage from "../components/NotFoundPage";
 import Header from "../components/Header";
@@ -14,8 +14,8 @@ const AppRouter = () => (
       <Header />
       <Switch>
         <Route exact path="/" component={ExpenseDashboardPage} />
-        <Route exact path="/create" component={AddDashboardPage} />
-        <Route exact path="/edit/:id" component={EditDashboardPage} />
+        <Route exact path="/create" component={AddExpensePage} />
+        <Route exact path="/edit/:id" component={EditExpensePage} />
         <Route exact path="/help" component={HelpPage} />
         <Route component={NotFoundPage} />
       </Switch>
