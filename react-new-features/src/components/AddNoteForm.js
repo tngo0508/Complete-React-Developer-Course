@@ -18,7 +18,7 @@ const AddNoteForm = () => {
   };
 
   return (
-    <div>
+    <>
       <p>Add note</p>
       <form onSubmit={addNote}>
         <input value={title} onChange={(e) => setTitle(e.target.value)} />
@@ -28,7 +28,7 @@ const AddNoteForm = () => {
         ></textarea>
         <button>add note</button>
       </form>
-    </div>
+    </>
   );
 };
 
