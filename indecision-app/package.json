@@ -22,7 +22,7 @@
     "react": "^16.0.0",
     "react-dom": "^16.13.1",
     "react-modal": "^2.2.2",
-    "validator": "^13.0.0",
+    "validator": "^13.7.0",
     "webpack-dev-server": "^2.11.5"
   },
   "devDependencies": {
