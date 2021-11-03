@@ -24,7 +24,7 @@
     "react-modal": "^2.2.2",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "validator": "^13.0.0",
+    "validator": "^13.7.0",
     "webpack-dev-server": "^2.11.5"
   },
   "devDependencies": {
